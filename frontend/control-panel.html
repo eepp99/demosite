@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Control Panel</title>
+  <link rel="stylesheet" href="control-panel.css">
+</head>
+<body>
+  <section class="admin-section">
+    <h2>Upload New Item</h2>
+    <form id="itemForm" enctype="multipart/form-data">
+      <input name="name" placeholder="Item Name" required />
+      <input name="model" placeholder="Model" required />
+      <input name="quality" placeholder="Quality" required />
+      <input name="description" placeholder="Description" required />
+      <input name="price" placeholder="Price" required />
+      <input name="coinType" placeholder="Crypto Coin Type (e.g., USDT)" required />
+      <input type="file" name="photos" multiple accept="image/*" />
+      <input type="number" name="stock" placeholder="Stock Quantity" required />
+      <p style="font-size: 0.9em; color: gray;">You may upload up to 4 images (optional).</p>
+      <button type="submit">Upload Item</button>
+    </form>
+
+    <h2>Upload Slideshow Media</h2>
+    <form id="slideshowForm" enctype="multipart/form-data">
+      <input type="file" name="media" accept="image/*,video/*" required />
+      <button type="submit">Upload Media</button>
+    </form>
+
+
+    <h2>Buyer Submissions</h2>
+    <div id="adminBuyers">Loading buyers...</div>
+    <button onclick="clearAllBuyers()" style="background:red; color:white; margin-top:10px;">Clear All Buyers</button>
+
+
+
+    <h3>Uploaded Items</h3>
+    <div id="adminItems"></div>
+
+    <h3>Uploaded Slideshow</h3>
+    <div id="adminSlideshow"></div>
+
+    <h2>Inquiries</h2>
+    <div id="adminInquiries">Loading inquiries...</div>
+
+    <h2>Support Tickets</h2>
+    <div id="adminSupport">Loading support tickets...</div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

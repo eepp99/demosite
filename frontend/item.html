@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Item Info</title>
+  <link rel="stylesheet" href="item.css"/>
+</head>
+<body> 
+
+  <header>
+    <a id="cartIcon">
+      <img src="shopping-cart-icon-png.webp" alt="Cart" />
+      <span id="cartCount">0</span>
+    </a>
+      
+  </header>
+
+
+   <!-- ✅ Only one Mini Cart Panel (outside nav) -->
+  <div id="miniCart" class="mini-cart hidden">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      Total: <span id="cartTotal">₦0</span>
+    </div>
+    <button onclick="window.location.href='pay.html'">Checkout</button>
+  </div>
+
+  <!-- Main Item Section -->
+  <div class="item-details" id="itemDetails">
+  </div>
+
+ 
+
+  <!-- Related Items -->
+  <h3 style="text-align: center; margin-top: 3rem;">Other Items</h3>
+  <div id="relatedItems" class="horizontal-scroll"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
