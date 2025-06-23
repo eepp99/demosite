@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Support - Ezenna's Store</title>
+  <link rel="stylesheet" href="stylee.css"/>
+</head>
+<body class="bw-theme">
+  <header>
+    <div class="logo">Ezenna's Store</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="inquiry.html">Inquiry</a>
+    </nav>
+  </header>
+
+  <main class="form-section">
+    <h1>Customer Support</h1>
+    <p>Need help with an order or product? Submit a support ticket below.</p>
+
+    <form id="supportForm" class="inquiry-form">
+      <label>Full Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Email Address:</label>
+      <input type="email" name="email" required />
+
+      <label>Order Number (optional):</label>
+      <input type="text" name="order" />
+
+      <label>Issue Description:</label>
+      <textarea name="issue" rows="5" required></textarea>
+
+      <button type="submit">Submit Ticket</button>
+    </form>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; <span id="year"></span> Ezenna's Store</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("supportForm");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.timestamp = new Date().toISOString();
+
+      fetch("http://localhost:3000/api/support", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        alert("Your support ticket has been submitted!");
+        form.reset();
+      })
+      .catch(() => alert("Failed to submit support ticket."));
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

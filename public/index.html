@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ezenna's Store</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Ezenna's Store</div>
+
+    <nav id="menu">
+      <a href="index.html">Home |</a>
+      <a href="inquiry.html">Inquiry |</a>
+      <a href="customer support.html">Customer Support</a>
+    </nav>
+
+    <div id="cartIcon">
+      <img src="shopping-cart-icon-png.webp" alt="Cart" />
+      <span id="cartCount">0</span>
+    </div>
+
+    <div id="hamburger">&#9776;</div>
+  </header>
+
+  <!-- ✅ Only one Mini Cart Panel (outside nav) -->
+  <div id="miniCart" class="mini-cart hidden">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      Total: <span id="cartTotal">₦0</span>
+    </div>
+    <button onclick="window.location.href='pay.html'">Checkout</button>
+  </div>
+
+  <section id="slideshow" class="slideshow-container"></section>
+
+  <section class="filters">
+    <input type="text" id="searchInput" placeholder="Search by name or model">
+    <input type="number" id="minPrice" placeholder="Min Price">
+    <input type="number" id="maxPrice" placeholder="Max Price">
+    <button onclick="applyFilters()">Search</button>
+  </section>
+
+  <section id="itemsContainer" class="item-container"></section>
+
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <!-- About -->
+      <div class="footer-section">
+        <h3>Ezenna's Store</h3>
+        <p>Premium tech, auto parts, and custom deals. Powered by crypto. Backed by trust.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+         
+          <li><a href="inquiry.html">Inquiry</a></li>
+          <li><a href="customer-support.html">Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:support@ezennastore.com">support@ezennastore.com</a></p>
+        <p>Phone: <a href="tel:+2348000000000">+234 800 000 0000</a></p>
+        <p>Lagos, Nigeria</p>
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; <span id="year"></span> Ezenna's Store. Built with ❤️ for innovation.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
