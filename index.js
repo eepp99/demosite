@@ -21,6 +21,11 @@ app.use(express.static(path.join(__dirname, 'frontend')));
 app.use('/data', express.static(path.join(__dirname, '../data')));
 
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
+
 // Ensure folders exist
 ['../uploads/items', '../uploads/slideshow', '../data'].forEach(folder => {
   const dir = path.join(__dirname, folder);
